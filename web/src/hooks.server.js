@@ -3,7 +3,7 @@ import { env } from '$env/dynamic/public';
 
 export const handle = async ({ event, resolve }) => {
 	try {
-		event.locals.pb = new PocketBase(env.PUBLIC_POCKETBASE_URL || 'https://localhost:8090');
+		event.locals.pb = new PocketBase(env.PUBLIC_POCKETBASE_URL || 'http://localhost:8090');
 
 		event.locals.pb.authStore.loadFromCookie(event.request.headers.get('cookie') || '');
 
