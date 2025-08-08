@@ -23,7 +23,7 @@ jobs:
         uses: a7ul/tar-action@v1.1.0
         with:
           command: c
-          cwd: "./www"
+          cwd: "./web"
           files: |
             ./
           outPath: deploy.tar
