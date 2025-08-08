@@ -21,6 +21,16 @@ export const POST = async ({ request }) => {
 			if (activeSessions.length > 0) {
 				const session = activeSessions[0];
 
+				if (session.employee != employeeId) {
+					return new Response(
+						JSON.stringify({
+							success: false,
+							message: 'Scanner is already in use by another employee'
+						}),
+						{ status: 400 }
+					);
+				}
+
 				await pbAdmin.collection('scanner_sessions').update(session.id, {
 					end_time: new Date()
 				});
