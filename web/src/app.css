@@ -1,4 +1,10 @@
 @import 'tailwindcss';
 @plugin "daisyui" {
 	themes: corporate --default;
+	logs: false;
+}
+@plugin "daisyui/theme" {
+	name: corporate;
+	default: true;
+	--color-primary: #8a3699;
 }
