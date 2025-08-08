@@ -7,6 +7,10 @@ COPY . /usr/src/app
 RUN apt-get update && apt-get install -y curl tzdata
 RUN cp /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN npm install
+
+ARG PUBLIC_POCKETBASE_URL=${PUBLIC_POCKETBASE_URL}
+ENV PUBLIC_POCKETBASE_URL=${PUBLIC_POCKETBASE_URL}
+
 RUN npm run build
 
 FROM node:latest
