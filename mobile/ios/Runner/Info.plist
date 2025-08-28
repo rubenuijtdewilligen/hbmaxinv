@@ -45,5 +45,7 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>NFCReaderUsageDescription</key>
+	<string>De HB Max app moet NFC tags kunnen lezen.</string>
 </dict>
 </plist>
